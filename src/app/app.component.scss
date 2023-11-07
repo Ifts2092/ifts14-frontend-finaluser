@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+.navbar-primary {
+    /*border-bottom: 0px;*/
+    border-top: 6px #fdd306 solid;
+    box-shadow: 1px 1px 5px #e0e0e0;
+}
+
+.navbar-top .sub-logo {
+    float: left;
+    line-height: 1.7em;
+    padding-left: 10px;
+    margin-bottom: 10px;
+    border-left: solid 1px #333;
+    img {
+        height: 50px;
+        margin-bottom: 5px;
+    
+    }
+  }
+ 
+.bac-header {
+    width: 100px;
+}
+.navbar {
+    margin-bottom: 0;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end
+}   
+
+.btn-siu{
+    margin:10px;
+    margin-top:20px;
+}

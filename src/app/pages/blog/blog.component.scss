@@ -1,0 +1,10 @@
+.list-thumb > div {
+    width: 144px;
+       height: 177px;
+}
+
+li:not(.active) {
+    a {
+        color: black;
+    }
+}
