@@ -4,20 +4,21 @@ import { BlogService } from 'src/app/services/blog.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
-  selector: 'app-blog',
-  templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss']
+  selector: 'app-blog-page',
+  templateUrl: './blog-page.component.html',
+  styleUrls: ['./blog-page.component.scss']
 })
-export class BlogComponent {
+export class BlogPageComponent {
 
-  public list:any  = [];
-  public categories:any  = [];
+  public data:any  = [];
 
   env:any;
 
-  section: any;
-  category: any;
+  id: any;
 
+  previewImg:any;
+
+  
   constructor(
     private blogService:BlogService,
     private router : Router, 
@@ -33,11 +34,9 @@ export class BlogComponent {
 
     this.route.params.subscribe((params: any) => {
       console.log(params);
-      this.section = params?.section;
-      this.category = params?.category;
+      this.id = params?.id;
       
-      this.getCategories();
-      this.getList();
+      this.getPostById(this.id);
     });
 
     //const section = this.route.snapshot.paramMap.get('section');
@@ -46,17 +45,15 @@ export class BlogComponent {
 
     
   }
+  async getPostById(id:any){
+    this.blogService.getPostById(this.id).subscribe(data => {
+      this.data = data;
 
-  async getList(){
-    this.blogService.getPosts(this.section, this.category).subscribe(data => {
-       this.list = data;
-    });    
-  }
+      if(this.data.imageUrl){
+        this.previewImg = environment.apiUrl + '/api'+ this.data.imageUrl;
+      }
 
-  async getCategories(){
-    this.blogService.getCategories().subscribe(data => {
-       this.categories = data;
-    });    
+   });    
   }
 
 }

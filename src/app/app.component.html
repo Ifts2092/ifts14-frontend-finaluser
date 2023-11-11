@@ -3,11 +3,11 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-sm-6">
-          <a class="navbar-brand bac-header" href="index.html"></a>
+          <a class="navbar-brand bac-header" href="/"></a>
           <h2 class="sub-logo"><img src="assets/logo14__b_w.png" /></h2>
         </div>
         <div class="col-md-6 col-sm-6 text-right oculto vertical-align">
-          <a class="btn btn-primary btn-siu" role="button" href="#">Ingresa SIU Guarani</a>
+          <a  class="btn btn-primary btn-siu" role="button" href="https://guarani-autogestionagencia.bue.edu.ar/acceso/">Ingresa SIU Guarani</a>
           <h5 class="sub-brand"><img src="assets/bastrap3/bac-header-2.png"/></h5>
           <!--<h5 class="sub-brand">Vamos Buenos Aires</h5>-->
         </div>
@@ -31,20 +31,22 @@
       </div>
       <div class="collapse navbar-collapse" id="main-nav">
         <ul class="nav navbar-nav navbar-right">
-          <li class="active"><a href="/">Inicio</a></li>
-          <li><a href="/carreras">Carreras</a></li>
-          <li><a href="#">Requisitos</a></li>
+          <li><a href="/">Inicio</a></li>
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Carreras <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li *ngFor="let item of careers" ><a [routerLink]="['/carreras/' +  item.name.toLowerCase() ]">{{item.name}}</a></li>
+            </ul>
+          </li>
+          <li><a [routerLink]="['/requisitos']" >Requisitos</a></li>
           <li class="dropdown">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Institucional <span class="caret"></span></a>
             <ul class="dropdown-menu">
-              <li><a href="/novedades">Novedades</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="#">Becas</a></li>
-              <li><a href="#">Articulacion</a></li>
+              <li *ngFor="let item of sections" ><a [routerLink]="['/institucional/' +  item.name.toLowerCase() ]">{{item.name}}</a></li>
             </ul>
           </li>
           <li><a href="#">Documentos</a></li>
-          <li><a href="/carreras">Galeria</a></li>
+          <!--<li><a href="/carreras">Galeria</a></li>-->
           <li><a href="/contacto">Contacto</a></li>
           
         </ul>

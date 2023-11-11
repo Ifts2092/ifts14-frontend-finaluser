@@ -6,18 +6,19 @@
             <div class="col-md-8 col-md-push-4">
               <br>
               <section class="list-group list-group-content">
-                <h2>Novedades IFTS 14</h2>
+                <h2>{{ section.toUpperCase()}}</h2>
+                <h4 *ngIf="category">{{ category.toUpperCase()}}</h4>
                 <div class="row row-list-pagina">
                   <div class="col-md-12 col-sm-12">
-                    <a href="#" *ngFor="let item of list" class="list-group-item list-thumb" data-original-title="" title="">
-                      <div style="background-image:url(https://ifts14.com.ar/imagenes/foto_Novedades2.jpg);"></div>
+                    <a  *ngFor="let item of list" [routerLink]="['/institucional/noticia/'+ item.id ]"  class="list-group-item list-thumb" data-original-title="" title="">
+                      <div [ngStyle]="{'background-image': 'url(' + env + item.imageUrl + ')'}" ></div>
                       <h4>{{item.title}}</h4>
                       <p>{{item.content}}</p>
                     </a>
                   </div>
                 </div>
                 <br>
-                <button class="btn btn-default btn-lg btn-block">Ver todas las notas</button>
+                <!--<button class="btn btn-default btn-lg btn-block">Ver todas las notas</button>-->
               </section>
               <br>
               <hr class="visible-xs visible-sm">
@@ -25,15 +26,16 @@
   
             <aside class="col-md-4 col-md-pull-8">
               <div class="row">
-                <h3>Institucional</h3>
+                <h3>Categorias:</h3>
 
                 <div class="col-md-11">
                   <br>
                   
                   <ul class="nav nav-stacked nav-pills">
-                    <li class=" active"><a href="#"><span class="glyphicon glyphicon-book"></span>  Novedades</a> </li>
-                    <li> <a href="#"><span class="glyphicon glyphicon-book"></span>  Becas</a> </li>
-                    <li> <a href="#"><span class="glyphicon glyphicon-book"></span>  Articulacion</a> </li>
+                    <!--<li class=" active"><a href="#"><span class="glyphicon glyphicon-book"></span>  Novedades</a> </li>-->
+                    <li *ngFor="let item of categories" > 
+                      <a [routerLink]="['/institucional/' + section + '/' + item.name.toLowerCase() ]"><span class="glyphicon glyphicon-book"></span> {{ item.name }}</a> 
+                    </li>
                   </ul>
                 </div>
               </div>

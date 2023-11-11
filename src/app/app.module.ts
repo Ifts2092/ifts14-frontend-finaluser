@@ -11,6 +11,8 @@ import { BlogComponent } from './pages/blog/blog.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BlogPageComponent } from './pages/blog-page/blog-page.component';
+import { RequirementComponent } from './pages/requirement/requirement.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { FormsModule } from '@angular/forms';
     NotFoundComponent,
     CareerComponent,
     BlogComponent,
-    ContactComponent
+    ContactComponent,
+    BlogPageComponent,
+    RequirementComponent
   ],
   imports: [
     RouterModule,

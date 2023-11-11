@@ -1,13 +1,49 @@
-<div class="jumbotron jumbotron-misc jumbotron-main">
+     <!-- CONTENIDO -->
+      <main class="main-container no-padding-top" role="main">
+        <div class="container">
+          <div class="row">
+  
+            <div class="col-md-12 ">
+              <br>
+              <section class="list-group list-group-content">
+                <h1>{{this.career.name}}</h1>
+                <div class="row row-list-pagina">
+                  <div class="blank_space"></div>
+                  <h4>Descripcion:</h4>
+                  <div>{{ this.career.description }}</div> 
+                  <div class="blank_space"></div>
+                  
+                  <h4>Materias de la carrera:</h4>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Materia</th>
+                        <th scope="col">Año</th>
+                        <th scope="col">Duración</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of subjects">
+                        <th scope="row">{{item.name}}</th>
+                        <td>{{item.year}}</td>
+                        <td>{{item.type}}</td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
 
-    <!-- CONTENIDO -->
-    <main class="main-container" role="main">
-        
-    <div class="container">
-        
-    </div>
-
-</main>
-</div>
+                </div>
+                <br>
+                <!--<button class="btn btn-default btn-lg btn-block">Ver todas las notas</button>-->
+              </section>
+              <br>
+              <hr class="visible-xs visible-sm">
+            </div>
+  
+          </div>
+        </div>
+      </main>
+      <!-- FIN DE CONTENIDO -->
+  
 
 
