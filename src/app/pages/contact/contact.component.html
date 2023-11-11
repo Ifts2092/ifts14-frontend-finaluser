@@ -2,19 +2,39 @@
     <section>
       <div class="container">
         <br>
-        <h2 class="h1 text-center">Completá tus datos</h2>
+        <h2 class="h1 text-center">Datos de contacto:</h2>
         <br>
         <form class="col-md-8 col-md-offset-2" actio="#">
           <br>
 
           <div class="form-group">
-            <label for="Nombre">Nombre y apellido</label>
+            <label for="Nombre">Email:</label>
             <div class="row">
-              <div class="col-xs-6"><input class="form-control input-lg" type="text" placeholder="Nombre" id="Nombre" required=""></div>
+              <!--<div class="col-xs-6"><input class="form-control input-lg" type="text" placeholder="Nombre" id="Nombre" required=""></div>
               <div class="col-xs-6"><input class="form-control input-lg" type="text" placeholder="Apellido" id="Apellido" required=""></div>
+              -->
+              {{email}}
             </div>
           </div>
-          <br>
+          <div class="form-group">
+            <label for="Nombre">Direccion:</label>
+            <div class="row">
+              {{direccion}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Nombre">Teléfono:</label>
+            <div class="row">
+              {{telefono}}
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Nombre">Horario:</label>
+            <div class="row">
+              {{horario}}
+            </div>
+          </div>
+          <!--
           <div class="form-group">
             <label for="Correo">Correo electrónico</label>
             <input class="form-control input-lg" type="text" placeholder="Correo electrónico" id="Correo">
@@ -30,6 +50,7 @@
           <p class="text-center">
             <button class="btn btn-primary btn-lg" href="#">Enviar</button>
           </p>
+        -->
         </form>
       </div>
     </section>

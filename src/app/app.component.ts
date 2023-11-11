@@ -17,6 +17,10 @@ export class AppComponent {
   sections: any;
   careers:any;
   
+  facebookLink:any;
+  xLink:any;
+
+  
   constructor(
     private blogService:BlogService,
     private settingService:SettingService,
@@ -42,7 +46,8 @@ export class AppComponent {
       //     localStorage.setItem(s.key,s.value);
       //   }
       // });
-      let a = await this.settingService.getSetting('email');
+      this.facebookLink = await this.settingService.getSetting('Facebook');
+      this.xLink = await this.settingService.getSetting('X');
     }
 
     async getCareers(){
