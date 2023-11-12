@@ -14,6 +14,7 @@ export class BlogComponent {
   public categories:any  = [];
 
   env:any;
+  no_image:any = "/assets/no-image.png";
 
   section: any;
   category: any;
@@ -57,6 +58,10 @@ export class BlogComponent {
     this.blogService.getCategories().subscribe(data => {
        this.categories = data;
     });    
+  }
+
+  removeHTML(html:any){
+    return html.replace(/<[^>]*>/g, '');
   }
 
 }

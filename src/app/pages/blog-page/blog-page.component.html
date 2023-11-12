@@ -8,8 +8,7 @@
               <section class="list-group list-group-content">
                 <h1>{{data.title}}</h1>
                 
-                <div>
-                    {{data.content}}
+                <div [innerHTML]="data.content">
                 </div>
 
               </section>

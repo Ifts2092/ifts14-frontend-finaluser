@@ -11,9 +11,10 @@
                 <div class="row row-list-pagina">
                   <div class="col-md-12 col-sm-12">
                     <a  *ngFor="let item of list" [routerLink]="['/institucional/noticia/'+ item.id ]"  class="list-group-item list-thumb" data-original-title="" title="">
-                      <div [ngStyle]="{'background-image': 'url(' + env + item.imageUrl + ')'}" ></div>
+                      <div *ngIf="item.imageUrl" [ngStyle]="{'background-image': 'url(' + env + item.imageUrl + ')'}" ></div> 
+                      <div *ngIf="!item.imageUrl" [ngStyle]="{'background-image': 'url(' + no_image +')'}" ></div> 
                       <h4>{{item.title}}</h4>
-                      <p>{{item.content}}</p>
+                      <p [innerHTML]="removeHTML(item.content)" class="excerpt"></p>
                     </a>
                   </div>
                 </div>
